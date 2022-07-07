@@ -8,6 +8,12 @@ export default class EmojiResultsRow extends PureComponent {
     symbol: PropTypes.string
   };
 
+  static animateFromEvent(event) {
+      event.trigger.classList.remove('component-emoji-result-row-clicked');
+      void event.trigger.offsetWidth;
+      event.trigger.classList.add('component-emoji-result-row-clicked');
+  }
+
   render() {
     const codePointHex = this.props.symbol.codePointAt(0).toString(16);
     const src = `//cdn.jsdelivr.net/emojione/assets/png/${codePointHex}.png`;

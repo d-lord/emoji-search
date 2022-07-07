@@ -12,6 +12,8 @@ export default class EmojiResults extends PureComponent {
 
   componentDidMount() {
     this.clipboard = new Clipboard(".copy-to-clipboard");
+    // slightly dirty to do this from the parent component, but it needs to be done exactly once, so not EmojiResultRow.componentDidMount:
+    this.clipboard.on('success', EmojiResultRow.animateFromEvent);
   }
 
   componentWillUnmount() {

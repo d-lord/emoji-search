@@ -11,6 +11,10 @@
   background-color: #eee;
 }
 
+.component-emoji-result-row-clicked {
+  animation: purr 1s ease-out;
+}
+
 .component-emoji-result-row img {
   width: 32px;
   height: 32px;
@@ -33,4 +37,12 @@
 
 .component-emoji-result-row:hover .info {
   display: inline-block;
+}
+
+@keyframes purr {
+  0% {}
+  50% {
+    background-color: #bbb;
+  }
+  100% {}
 }
